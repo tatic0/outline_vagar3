@@ -5,7 +5,8 @@ def confmaker(model, options):
   with open('FW_RTC_template.txt', 'r') as template:
     a = template.read()
   conf = open('FW_RTC.txt', 'w')
-  #a = a.format("Y", "N", "", "", "", "", "", "" , "N", "", "", "", "", "", "" , "N", "", "", "", "", "", "" , "N", "", "", "" )
+  # len(options) must be 28
+  # date format: 2016/08/17 11:36:39
   a = a.format(*options)
   conf.write(a)
   conf.close()
